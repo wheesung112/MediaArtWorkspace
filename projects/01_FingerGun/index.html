@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로젝트 01 | 쌍권총 미디어아트</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- MediaPipe 글로벌 라이브러리들 (shared 폴더로 넘기지 않고 여기서 부르는 것이 가볍고 충돌이 없습니다) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="loading" id="loadingText">웹캠과 AI 모델을 불러오는 중입니다...</div>
+    <video class="input_video" autoplay playsinline></video>
+    <canvas class="output_canvas" width="1280" height="720"></canvas>
+  </div>
+  
+  <!-- 주의: 자바스크립트 모듈(import)을 허용하기 위해 type="module" 필수! -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
