@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+#info {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 100;
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+h3 {
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

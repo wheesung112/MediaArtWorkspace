@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #0f1116;
+    color: rgba(255, 255, 255, 0.96);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.interface-frame {
+    position: fixed;
+    inset: 16px;
+    z-index: 160;
+    pointer-events: none;
+    --frame-top: 54px;
+    --frame-bottom: 34px;
+}
+
+.interface-frame::before {
+    content: "";
+    position: absolute;
+    inset: var(--frame-top) 0 var(--frame-bottom) 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.58);
+    border-right: 1px solid rgba(255, 255, 255, 0.58);
+}
+
+.frame-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: clamp(2.35rem, 4vw, 4rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.95);
+    background: transparent;
+    padding: 0 26px 0 0;
+}
+
+.frame-topline-right {
+    position: absolute;
+    top: var(--frame-top);
+    border-top: 1px solid rgba(255, 255, 255, 0.58);
+}
+
+.frame-topline-right {
+    left: clamp(510px, 31vw, 720px);
+    right: 0;
+}
+
+.frame-bottom-midline {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    width: clamp(760px, 72vw, 1320px);
+    transform: translateX(-50%);
+    border-top: 1px solid rgba(255, 255, 255, 0.58);
+}
+
+.frame-bottom-left,
+.frame-bottom-right {
+    position: absolute;
+    bottom: 2px;
+    font-size: clamp(1.15rem, 1.6vw, 1.65rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.frame-bottom-left {
+    left: 0;
+}
+
+.frame-bottom-right {
+    right: 0;
+}
+
+.mono {
+    font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+@media (max-width: 900px) {
+    .interface-frame {
+        inset: 10px;
+        --frame-top: 42px;
+        --frame-bottom: 30px;
+    }
+
+    .interface-frame::before {
+        inset: var(--frame-top) 0 var(--frame-bottom) 0;
+    }
+
+    .frame-topline-right {
+        top: var(--frame-top);
+    }
+
+    .frame-topline-right {
+        left: 320px;
+    }
+
+    .frame-bottom-midline {
+        width: clamp(360px, 62vw, 860px);
+        bottom: 10px;
+    }
+}

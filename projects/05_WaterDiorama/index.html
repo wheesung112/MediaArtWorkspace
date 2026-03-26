@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>05_WaterDiorama - Base Setup</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Hand Tracking -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="interfaceFrame" class="interface-frame" aria-label="interface frame">
+        <div class="frame-title">05_Water Diorama</div>
+        <div class="frame-topline-right"></div>
+        <div class="frame-bottom-midline"></div>
+        <div class="frame-bottom-left mono">Particle: <span id="frameParticles">0</span></div>
+        <div class="frame-bottom-right mono">State: <span id="frameState">Idle</span></div>
+    </div>
+    <!-- ?몃뱶 ?몃옒???곸긽 諛??뚮뜑留곸슜 罹붾쾭??(z-index瑜?-1濡???떠 3D 諛곌꼍??源붾┝) -->
+    <video class="input_video" style="display:none;" autoplay playsinline></video>
+    <canvas class="output_canvas"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
+
+    <!-- Import Maps for Three.js (using Unpkg) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three/build/three.webgpu.js",
+                "three/webgpu": "https://unpkg.com/three/build/three.webgpu.js",
+                "three/tsl": "https://unpkg.com/three/build/three.tsl.js",
+                "three/addons/": "https://unpkg.com/three/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

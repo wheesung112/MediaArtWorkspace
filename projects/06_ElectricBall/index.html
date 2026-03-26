@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>06_ElectricBall - Debug Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="info"
+        style="position:absolute; top:20px; left:50%; transform:translateX(-50%); text-align:center; color:white; z-index:10; pointer-events:none; text-shadow:0 0 10px rgba(0,0,0,0.8);">
+        <h3 style="margin:0;">Step 6: Electric Ball - Debug Base</h3>
+        <p style="margin:5px 0;">웹캠 + WebGPU 렌더러 + 핸드트래킹 최소 구성</p>
+    </div>
+
+    <video class="input_video"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; object-fit:cover; transform:scaleX(-1);"
+        autoplay playsinline muted></video>
+
+    <canvas class="output_canvas"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;"></canvas>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.174.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.174.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
